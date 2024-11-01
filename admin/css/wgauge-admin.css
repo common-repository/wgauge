@@ -1,0 +1,524 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+ body {
+    background: #F1F1F1;
+  }
+  
+  /** Layout **/
+  #wg-stage {
+    font-family: 'Biryani';
+    max-width: 1800px;
+    margin: auto;
+  }
+  #wg-stage * {
+    font-family: inherit;
+    list-style: none;
+  }
+  .wg-row {
+    display: flex;
+  }
+  .wg-tile {
+    padding: 25px;
+    background: #253044;
+    margin: 8px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+  }
+
+  .wg-tile canvas {
+    min-height: 420px;
+  }
+  
+  .wg15 {
+    width: calc(15% - 30px);
+  }
+  .wg20 {
+    width: calc(20% - 30px);
+  }
+  .wg30 {
+    width: calc(30% - 30px);
+  }
+  
+  .wg40 {
+    width: calc(40% - 30px);
+  }
+  
+  .wg60 {
+    width: calc(60% - 30px);
+  }
+  .wg70 {
+    width: calc(70% - 30px);
+  }
+  .wg80 {
+    width: calc(80% - 30px);
+  }
+  .wg85 {
+    width: calc(85% - 30px);
+  }
+
+  .wg100 {
+    width: calc(100%);
+  }
+  /** Components **/
+  .wg-logo-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+  }
+  .wg-logo-hero a {
+    text-align: center;
+  }
+  .wg-logo-hero img {
+    max-width: 70%;
+  }
+
+  .wg-info {
+    position: absolute;
+    height: 32px;
+    color: #3FECFF;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+  }
+  .wg-info:hover {
+    transform: scale(1.15);
+    box-shadow: 1px 2px 3px (0,0,0,0.4);
+  }
+  .wg-info p {
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .wg-tile--head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .wg-tile--title {
+    margin: 0;
+    color: white;
+    font-weight: 300;
+  }
+  .wg-tile--rating {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .wg-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .wg-button-tile {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    line-height:0;
+    transition: 450ms ease-in-out;
+    cursor: pointer;
+  }
+  .wg-button-tile:hover {
+    box-shadow: 1px 2px 3px (0,0,0,0.4);
+  }
+  .glyphicon-calendar::after {
+      /* Size & position */
+      position: relative;
+      width: 200px;
+      padding: 10px 15px 6px;
+      height: auto;
+      /* Styles */
+      background: #192233;
+      border-radius: 5px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease-out;
+      align-self: flex-start;
+      color: white;
+      font-size: 14px;
+  }
+  .reportrange {
+    background: #1a2334;
+    cursor: pointer;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 10px 6px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    width: 100%;
+  }
+  .reportrange-wrapper {
+    margin-right: 20px;
+  }
+  .wg-dropdown:after { /* Little arrow */
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      margin-top: -3px;
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #fff transparent;
+  }
+  
+  .wg-dropdown .dropdown {
+      /* Size & position */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+  
+      /* Styles */
+      background: #fff;
+      border-radius: 0 0 5px 5px;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-top: none;
+      border-bottom: none;
+      list-style: none;
+      transition: all 0.3s ease-out;
+      margin: 0;
+      padding: 0; 
+      z-index: 999;
+  
+      /* Hiding */
+      max-height: 0;
+      overflow: hidden;
+  }
+  
+  .daterangepicker.dropdown-menu.ltr.opensleft {
+    display: none;
+}
+  
+  /* Hover state */
+  
+  .wg-dropdown .dropdown li:hover a {
+      color: #57a9d9;
+  }
+  
+  /* Active state */
+  
+  .wg-dropdown.active {
+      border-radius: 5px 5px 0 0;
+      background: #2E3C55;
+      box-shadow: none;
+      border-bottom: none;
+      color: white;
+  }
+  
+  .wg-dropdown.active:after {
+      border-color: #fff transparent;
+      border-width: 0px 6px 6px 6px;
+      transition: 200ms ease-in-out;
+  }
+  
+  .wg-dropdown.active .dropdown {
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      max-height: 400px;
+  }
+  
+  /** TABLE **/
+  .wg-list {
+    border: 0px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .wg-list--row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px 14px;
+  }
+  
+  .wg-list--row ul {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wg-list--row ul:first-child {
+    padding: 0 4.5% 0 0;
+  }
+  
+  .wg-list--header {
+    color: white;
+    font-size: 12px;
+    padding: 10px 25px;
+  }
+  
+  .wg-list--card {
+    background: #2E3C55;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    margin-bottom: 6px;
+  }
+  #wg-page-comment-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wg-page-tile {
+    align-items: center;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+  }
+  .wg-page-tile li {
+    margin-bottom: 0;
+  }
+  .wg-page-tile li:first-child, #wg-page-list--header li:first-child {
+    width: 20%;
+    overflow: hidden;
+  }
+  .wg-page-tile--active {
+    background: rgba(47, 61, 85, 0.15) !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.35) !important;
+}
+  .page-list {
+    max-height: 45vh;
+    overflow-y: scroll;
+    padding: 8px 8px;
+    box-shadow: inset 0px 4px 8px rgba(0,0,0,.15);
+    border-radius: 4px;
+  }
+  .wg-comment-tile {
+    flex-direction: column;
+    padding-bottom: 10px;
+    width: calc(30% - 15px);
+    margin: 6px;
+    flex: auto;
+    min-width: 300px;
+  }
+  .wg-comment-tile--comment {
+    font-size: 14px;
+    font-weight: 300;
+    display:inline-block; 
+    max-height:120px; 
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap; 
+  }
+  
+  .wg-comment-tile--details {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+  
+  .wg-comment-tile--details span {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .wg-comment-tile--details span .wg-rating-badge {
+    margin-left: 10px;
+  }
+  /** Components **/
+  .wg-component-graph {
+    max-height: 420px;
+  }
+  .wg-component-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border: 3px solid #3FECFF;
+    border-radius: 100px;
+    padding: 1.5%;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+  }
+  
+  .wg-component-rating--rating p {
+    font-size: 62px;
+    margin:3px;
+    line-height: 62px;
+    color: #98D545;
+    font-weight: 100;
+    
+  }
+  
+  .wg-component-rating--score p {
+    line-height: 0;
+    margin: 0;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  .wg-component-rating span {
+    display: block;
+    text-align: center;
+  }
+  
+  .wg-rating-badge {
+    background: #1F2B3F;
+    width: 36px;
+    height: 32px;
+    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 99px;
+    color: #769A45;
+    font-weight: bold;
+  }
+
+  /** GRADE COLOURS **/
+  .wg_grade_a, .wg_grade_ap {
+    color: rgba(141, 195, 0, 1) !important;
+  }
+  .wg_grade_b, .wg_grade_bp {
+    color: rgba(23, 192, 230, 1) !important;
+  }
+  .wg_grade_c, .wg_grade_cp {
+    color: rgba(240, 220, 28, 1) !important;
+  }
+  .wg_grade_d, .wg_grade_dp {
+    color: rgba(230, 135, 25, 1) !important;
+  }
+  .wg_grade_f {
+    color: rgba(230, 53, 25, 1) !important;
+  }
+
+  /** NOTICES **/
+  .no-comment-notice {
+    color: #ffffff33;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /** MODAL **/
+#wg-settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #253e59ab;
+  transition: 400ms ease-in-out;
+}
+#wg-settings-modal .wg-tile {
+  transition: 600ms ease-in-out;
+  padding: 25px 50px 30px;
+}
+.wg-modal-not-active {
+  opacity: 0;
+  pointer-events: none;
+}
+.wg-logo-preview {
+  max-width: 140px;
+}
+.media-button {
+  background: #1b2435;
+  color: white;
+  height: 34px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+}
+#wg-settings-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#wg-settings-modal form input[type=text] {
+  width: 300px;
+  border-radius: 4px;
+  height: 32px;
+  margin-top: 2px;
+}
+
+#wg-settings-modal form input[type=submit] {
+  background: hsla(219, 32%, 10%, 1);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  height: 45px;
+  margin-top: 20px;
+  border: 1px solid hsl(219, 32%, 16%);
+}
+
+#wg-settings-modal form label {
+  color: white;
+}
+  /** Responsive **/
+
+  @media (max-width: 1200px) {
+    .wg-row .wg-row {
+      flex-direction: column;
+    }
+    .wg-component {
+      width: 100%;
+    } 
+  }
+
+  @media (max-width: 1024px) {
+    .wg-row {
+      flex-direction: column;
+    }
+    .wg-row .wg-row {
+      flex-direction: column;
+    }
+    .wg-tile {
+      width: calc(80vw - 72px);
+      margin: 3px 10px;
+      border-bottom: 4px solid #252c38;
+    }
+
+    #wg-link-cards {
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .wg-tile {
+      padding: 36px 24px 25px 24px;
+    }
+  }
+  @media (max-width: 967px) {
+    .wg-tile {
+      width: calc(100vw - 150px);
+    }
+  }
+  @media (max-width: 782px) {
+    .wg-tile {
+      width: calc(100vw - 90px);
+    }
+
+    .wg-comment-tile {
+      width: 100%;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .wg-tile--head {
+      flex-direction: column;
+    }
+    .reportrange-wrapper {
+      margin: 10px 0 0px 0;
+    }
+  }

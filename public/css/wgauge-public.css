@@ -1,0 +1,225 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ /** TOGGLE TABS **/
+ .wg-gauge-tab {
+    right: 100px;
+    border-radius: 16px 16px 0 0;
+    padding: 10px 30px 0;
+    color: white;
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,.15);
+    background: -webkit-gradient(linear,left top, left bottom,from(#253044),to(#21293E));
+    background: -webkit-linear-gradient(#253044,#21293E);
+    background: linear-gradient(#253044,#21293E);
+    cursor: pointer;
+ }
+ .wg-gauge-tab p {
+     margin-bottom: 10px;
+ }
+#wg-gauge-close {
+    position: absolute;
+    top: -34px;
+    right: 100px;
+}
+
+#wg-gauge-close img {
+    max-width: 16px;
+}
+
+ #wg-gauge-attention {
+    position: fixed;
+    bottom: 0;
+ }
+ /** MASTER CONTAINER **/
+ #wg-gauge-box {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    padding: 25px 50px;
+    z-index: 9999999999;
+    background: -webkit-gradient(linear,left top, left bottom,from(#253044),to(#21293E));
+    background: -webkit-linear-gradient(#253044,#21293E);
+    background: linear-gradient(#253044,#21293E);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,.15);
+    display: none;
+ }
+
+ /** LOGO **/
+ #wg-gauge-box .wg-logo {
+    max-width: 140px;
+ }
+/** FEEDBACK ELEMENTS CONTAINER **/
+ #wg-gauge-box .wg-feedback {
+     max-width: 767px;
+     margin: auto;
+ }
+
+ /** FEEDBACK ELEMENTS **/
+ #wg-gauge-box .wg-feedback--actions {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             -webkit-justify-content: center;
+             justify-content: center;
+     margin-top: 50px;
+ }
+
+ #wg-gauge-box .wg-feedback--actions button {
+    width: 175px;
+    padding: 10px 10px;
+    font-size: 18px;
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#1f2b3f), to(#192233));
+    background: -webkit-linear-gradient(#1f2b3f, #192233);
+    background: linear-gradient(#1f2b3f, #192233); */
+    margin: 0px 15px;
+    border: 2px solid rgb(59, 69, 95);
+    border-right: 0;
+    border-bottom: 0;
+    background-image: -webkit-linear-gradient(right, #47d6e4,#118ad3); /* For Chrome and Safari */ /* For old Fx (3.6 to 15) */ /* For pre-releases of IE 10*/ /* For old Opera (11.1 to 12.0) */
+    background-image:         -webkit-gradient(linear, left top, right top, from(#47d6e4),to(#118ad3));
+    background-image:         -webkit-linear-gradient(left, #47d6e4,#118ad3);
+    background-image:         linear-gradient(to right, #47d6e4,#118ad3); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+    color: white;
+    -webkit-text-fill-color: transparent;
+}
+.safari #wg-gauge-box .wg-feedback--actions button {
+    -webkit-text-fill-color: white;
+}
+
+#wg-gauge-box .wg-feedback--actions button:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .085;
+    z-index: -500;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000));
+    background: -webkit-linear-gradient(#ffffff, #000000);
+    background: linear-gradient(#ffffff, #000000);
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+
+#wg-gauge-box .wg-feedback--actions button:hover:before {
+    opacity: .15;
+}
+
+/** FEEDBACK SLIDER **/
+#wg-gauge-box #wgRange input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+    padding: 0;
+    background: rgba(0,0,0,0);
+    outline: none;
+    border: none;
+  }
+#wg-gauge-box #wgRange input[type=range]:focus {
+    outline: none;
+}
+#wg-gauge-box #wgRange input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    animate: 0.2s;
+    /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+    background: #f94150;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f94150), color-stop(0%, #f16f5c), color-stop(0%, #f6290c), color-stop(100%, #2ce74f));
+    background: -webkit-linear-gradient(left, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#f94150), color-stop(0%, #f16f5c), color-stop(0%, #f6290c), to(#2ce74f));
+    background: linear-gradient(to right, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f94150', endColorstr='#2ce74f', GradientType=1 );
+    border-radius: 99px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,.38);
+}
+#wg-gauge-box #wgRange input[type=range]::-webkit-slider-thumb {
+    /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
+    /* border: 1px solid #000000; */
+    height: 28px;
+    width: 28px;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(right, #47d6e4,#118ad3); /* For Chrome and Safari */ /* For old Fx (3.6 to 15) */ /* For pre-releases of IE 10*/ /* For old Opera (11.1 to 12.0) */
+    background:         -webkit-gradient(linear, left top, right top, from(#47d6e4),to(#118ad3));
+    background:         -webkit-linear-gradient(left, #47d6e4,#118ad3);
+    background:         linear-gradient(to right, #47d6e4,#118ad3); /* Standard syntax; must be last */
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+    border-radius: 99px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,.38);
+}
+
+#wg-gauge-box #wgRange input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    animate: 0.2s;
+    /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+    background: #f94150;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f94150), color-stop(0%, #f16f5c), color-stop(0%, #f6290c), color-stop(100%, #2ce74f));
+    background: -webkit-linear-gradient(left, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    background: linear-gradient(to right, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f94150', endColorstr='#2ce74f', GradientType=1 );
+    border-radius: 99px;
+    /* border: 0.2px solid #010101; */
+}
+#wg-gauge-box #wgRange input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+#wg-gauge-box #wgRange input[type=range]::-ms-track {
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    animate: 0.2s;
+    /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+    background: #f94150;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f94150), color-stop(0%, #f16f5c), color-stop(0%, #f6290c), color-stop(100%, #2ce74f));
+    background: -webkit-linear-gradient(left, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    background: linear-gradient(to right, #f94150 0%, #f16f5c 0%, #f6290c 0%, #2ce74f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f94150', endColorstr='#2ce74f', GradientType=1 );
+    border-radius: 99px;
+    /* border: 0.2px solid #010101; */
+}
+
+#wg-gauge-box #wgRange input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/** Thank you message **/
+
+#wg-thank-you p {
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 100;
+    font-size: 18px;
+}
